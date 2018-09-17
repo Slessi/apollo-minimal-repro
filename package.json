@@ -1,0 +1,24 @@
+{
+    "name": "apollo-minimal-repro",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "Edward Sammut Alessi <edward.sammut.alessi@preeostudios.com>",
+    "license": "MIT",
+    "dependencies": {
+        "apollo": "^1.9.2",
+        "graphql": "^14.0.2",
+        "rimraf": "^2.6.2"
+    },
+    "apollo": {
+        "schemas": {
+            "myPrimaryBackend": {
+                "schema": "schema.graphql"
+            }
+        }
+    },
+    "scripts": {
+        "gql-14": "yarn add apollo && yarn generate",
+        "gql-13": "rimraf node_modules/apollo/node_modules/graphql && yarn generate",
+        "generate": "apollo codegen:generate --target=typescript"
+    }
+}
